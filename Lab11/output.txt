@@ -1,0 +1,31 @@
+./send_mail 127.0.0.1 file.txt
+Am primit: 220 IOCLA-VM Python SMTP proxy version 0.2
+
+Trimit: HELO localhost
+Am primit: 250 IOCLA-VM
+Trimit: MAIL FROM: profesor@upb.ro
+Am primit: 250 Ok
+Trimit: RCPT TO: student@upb.ro
+Am primit: 250 Ok
+Trimit: DATA
+Am primit: 354 End data with <CR><LF>.<CR><LF>
+Trimit: MIME-Version: 1.0
+From: student@upb.ro
+To: profesor@upb.ro
+Subject: Informatii.txt
+Content-Type: multipart/mixed; boundary=abc
+--abc
+Content-Type: text/plain
+Atasez informatii.txt
+Cu bine,
+Studentul
+--abc
+Content-Type: text/plain
+Content-Disposition: attachment; filename="file.txt"
+This is an attachment.
+--abc
+
+.
+Am primit: 250 Ok
+Trimit: QUIT
+Am primit: 221 Bye
